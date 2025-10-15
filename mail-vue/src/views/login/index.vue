@@ -92,6 +92,14 @@
           >{{ $t('regBtn') }}
           </el-button>
         </div>
+        <!-- APP下载导航链接 -->
+        <div class="app-download-link">
+          <a href="https://api.husohua.com/app/" target="_blank" rel="noopener noreferrer">
+            <Icon icon="mingcute:download-2-fill" width="16" height="16" style="position: relative; top: 2px; margin-right: 4px;"/>
+            APP下载
+          </a>
+        </div>
+        
         <template v-if="settingStore.settings.register === 0">
           <div class="switch" @click="show = 'register'" v-if="show === 'login'">{{ $t('noAccount') }}
             <span>{{ $t('regSwitch') }}</span></div>
@@ -448,6 +456,25 @@ function submitRegister() {
   .form-title {
     font-weight: bold;
     font-size: 22px !important;
+  }
+
+  .app-download-link {
+    margin-top: 16px;
+    text-align: center;
+    
+    a {
+      color: var(--el-color-primary);
+      text-decoration: none;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: var(--el-color-primary-light-3);
+        transform: translateY(-1px);
+      }
+    }
   }
 
   .switch {
