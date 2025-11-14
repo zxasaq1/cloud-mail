@@ -104,6 +104,9 @@
           <div class="switch" @click="show = 'login'" v-else>{{ $t('hasAccount') }} <span>{{ $t('loginSwitch') }}</span>
           </div>
         </template>
+        <div class="app-download">
+          <a href="https://api.husohua.com/app/" target="_blank" rel="noopener noreferrer">APP下载</a>
+        </div>
       </div>
     </div>
     <el-dialog class="bind-dialog" v-model="showBindForm"  title="注册邮箱" >
@@ -628,6 +631,21 @@ function submitRegister() {
     span {
       color: var(--login-switch-color);
       cursor: pointer;
+    }
+  }
+
+  .app-download {
+    margin-top: 10px;
+    text-align: center;
+
+    a {
+      color: var(--login-switch-color);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   }
 
