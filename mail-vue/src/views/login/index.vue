@@ -81,6 +81,32 @@
                     type="text" autocomplete="off"/>
           <el-input v-if="settingStore.settings.regKey === 2" v-model="registerForm.code"
                     :placeholder="$t('regKeyOptional')" type="text" autocomplete="off"/>
+                    <!-- 注册码购买按钮 -->
+          <a v-if="settingStore.settings.regKey !== 1" class="buy-code-link" href="https://api.hsha.top/shop" target="_blank">
+            <Icon icon="mingcute:shopping-cart-1-line" width="14" height="14" />
+            购买注册码
+          </a>
+          <div v-show="verifyShow"
+               class="register-turnstile"
+               :data-sitekey="settingStore.settings.siteKey"
+@@ -709,6 +714,22 @@ function submitRegister() {
+  margin-bottom: 18px;
+}
+.buy-code-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--el-color-primary);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+}
+
           <div v-show="verifyShow"
                class="register-turnstile"
                :data-sitekey="settingStore.settings.siteKey"
